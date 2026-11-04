@@ -1,0 +1,476 @@
+/* ============================================================
+   The Archive — house stylesheet
+   Design system: Leslie L. Stevens
+
+   Everything you'd want to change lives in the block below.
+   Change a value here and it updates everywhere on the site.
+   ============================================================ */
+
+:root {
+  /* --- Color. These seven are the whole palette. Do not add more. --- */
+  --ground:      #F3EEE5;  /* the page */
+  --ink:         #15181B;  /* names, titles, body */
+  --ink-muted:   #5C6166;  /* labels, captions, secondary lines */
+  --accent:      #6E1F2B;  /* oxblood — the signature bar only */
+  --hairline:    #DDD8CC;  /* 1px dividers between rows */
+  --image-well:  #E6E0D4;  /* only where a real picture will sit */
+  --film-well:   #15181B;  /* only the video embed */
+
+  /* --- Type --- */
+  --font-display: "Bodoni Moda", Didot, "Times New Roman", serif;
+  --font-body:    "Newsreader", Georgia, serif;
+  --font-label:   "Source Sans 3", Inter, system-ui, sans-serif;
+
+  /* --- Spacing --- */
+  --gutter:  32px;
+  --measure: 1080px;   /* the content column */
+}
+
+/* --- Reset ------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 32px;
+}
+
+/* Square. The brand has no rounded corners anywhere. */
+*, img, div, a, button, input { border-radius: 0; }
+
+a { color: inherit; text-decoration: none; }
+a:hover .entry-title,
+a:hover .short-title,
+a:hover .next-title { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Keyboard focus has to be visible. Oxblood, square, no fill. */
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+h1, h2, h3, p { margin: 0; }
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* --- Shared pieces ----------------------------------------- */
+
+/* The label: small caps with wide spacing. Used above every rule. */
+.label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.label--accent { color: var(--accent); }
+
+/* The one action at the end of a block. */
+.action {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* The section head: a heavy ink rule with a label above it.
+   This is how structure is made on this site. Never a box. */
+.section-head {
+  border-top: 2px solid var(--ink);
+  padding-top: 14px;
+  margin-top: 72px;
+}
+
+.section-head--tight { margin-top: 0; }
+
+/* The signature bar. 56 by 3, oxblood, under a name or title. */
+.bar {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--accent);
+  margin: 22px 0 0;
+}
+
+/* The finding: one flat sentence. Largest text after the title. */
+.finding {
+  display: block;
+  font-size: 27px;
+  line-height: 40px;
+  margin-top: 26px;
+  max-width: 800px;
+}
+
+.names {
+  display: block;
+  font-size: 21px;
+  line-height: 32px;
+  margin-top: 20px;
+  max-width: 780px;
+}
+
+.muted { color: var(--ink-muted); }
+
+.caption {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 13px;
+  line-height: 21px;
+  color: var(--ink-muted);
+}
+
+/* --- Header ------------------------------------------------ */
+
+.site-header { border-bottom: 1px solid var(--ink); }
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 500;
+}
+
+.tagline { color: var(--accent); }
+
+.nav {
+  display: flex;
+  gap: 28px;
+  font-family: var(--font-label);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.nav a:hover { color: var(--ink); }
+
+/* --- Home: the lede ---------------------------------------- */
+
+.lede {
+  font-family: var(--font-display);
+  font-size: 46px;
+  line-height: 58px;
+  font-weight: 400;
+  max-width: 860px;
+  padding-top: 88px;
+  padding-bottom: 72px;
+}
+
+/* --- Home: the latest entry -------------------------------- */
+/* Rule 4: the name is the largest thing on the page. */
+
+.lead-entry { display: block; padding: 28px 0 44px; }
+
+.lead-entry .entry-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 70px;
+  font-weight: 500;
+  max-width: 900px;
+}
+
+.lead-entry .action { margin-top: 26px; }
+
+.head-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* --- Home: earlier entries --------------------------------- */
+/* Rule 5: inside a list row the finding is set LARGER than that
+   row's entry title. To flip it, swap the two font-size values
+   below — and the matching pair in the phone block at the end. */
+
+.entry-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.entry-row .number {
+  width: 96px;
+  flex-shrink: 0;
+  padding-top: 14px;
+}
+
+.entry-row .entry-body { flex: 999 1 420px; min-width: 0; }
+
+.entry-row .entry-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 26px;          /* <-- rule 5 pair, A */
+  line-height: 34px;
+  font-weight: 500;
+}
+
+.entry-row .names {
+  font-size: 19px;
+  line-height: 29px;
+  margin-top: 10px;
+  color: var(--ink-muted);
+}
+
+.entry-row .finding {
+  font-size: 30px;          /* <-- rule 5 pair, B */
+  line-height: 42px;
+  margin-top: 14px;
+  max-width: 760px;
+}
+
+/* --- Method: two columns, divided by a hairline ------------- */
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  padding-top: 30px;
+}
+
+.split .main { flex: 999 1 440px; min-width: 0; font-size: 20px; line-height: 32px; }
+
+.split .aside {
+  flex: 1 1 260px;
+  min-width: 0;
+  border-left: 1px solid var(--hairline);
+  padding-left: 28px;
+  font-family: var(--font-label);
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ink-muted);
+}
+
+.split .aside p + p { margin-top: 16px; }
+
+/* --- Case page: the head ----------------------------------- */
+
+.case-head { padding-top: 72px; }
+
+.case-title {
+  font-family: var(--font-display);
+  font-size: 72px;
+  line-height: 78px;
+  font-weight: 500;
+  margin-top: 18px;
+  max-width: 940px;
+}
+
+.case-head .bar { margin-top: 26px; }
+
+.case-head .finding { font-size: 31px; line-height: 46px; margin-top: 34px; max-width: 840px; }
+
+/* --- Case page: the film ----------------------------------- */
+
+.film {
+  margin-top: 56px;
+  background: var(--film-well);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.film iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* The placeholder sits on the film well, so it is set in the page
+   color at reduced opacity — not an eighth color. */
+.film-note { margin-top: 14px; }
+
+.film-placeholder { text-align: center; font-family: var(--font-label); }
+.film-placeholder .label { color: var(--ground); }
+.film-placeholder .sub {
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--ground);
+  opacity: 0.55;
+  margin-top: 10px;
+}
+
+/* --- Case page: the written entry -------------------------- */
+
+.prose { max-width: 720px; margin-top: 30px; }
+.prose p + p { margin-top: 24px; }
+.prose .action { margin-top: 28px; }
+
+/* --- Case page: shorts ------------------------------------- */
+
+.shorts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.shorts a { display: block; }
+.shorts .well { display: block; background: var(--image-well); aspect-ratio: 9 / 16; }
+.shorts .short-title { display: block; font-size: 18px; line-height: 27px; margin-top: 12px; }
+
+/* --- Case page: THE RECORD --------------------------------- */
+/* The signature section. An absence is a finding, so a NOT HELD
+   row gets the same layout and weight as a document in hand —
+   marked by an oxblood rule, never by a fill. */
+
+.record-title {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 50px;
+  font-weight: 500;
+  margin-top: 26px;
+  max-width: 940px;
+}
+
+.record-sub { margin-top: 16px; max-width: 720px; color: var(--ink-muted); }
+
+.record { margin-top: 40px; border-top: 1px solid var(--hairline); }
+
+.record-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.record-row .what { flex: 1 1 200px; min-width: 0; }
+
+.record-row .doc-name { font-size: 21px; line-height: 30px; margin-top: 10px; }
+
+.record-row .source {
+  flex: 1 1 200px;
+  min-width: 0;
+  font-family: var(--font-label);
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ink-muted);
+}
+
+.record-row .shows {
+  flex: 999 1 300px;
+  min-width: 0;
+  font-size: 18px;
+  line-height: 29px;
+  color: var(--ink-muted);
+}
+
+/* No fill. The oxblood rule is the whole mark. */
+.record-row--absent {
+  border-left: 3px solid var(--accent);
+  padding-left: 26px;
+}
+
+.record-note { max-width: 720px; margin-top: 22px; }
+
+/* --- Case page: next entry --------------------------------- */
+
+.next { display: block; padding-top: 30px; }
+
+.next-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 54px;
+  font-weight: 500;
+}
+
+.next .names { font-size: 21px; line-height: 32px; margin-top: 20px; }
+.next .action { margin-top: 26px; }
+
+/* --- Footer ------------------------------------------------ */
+
+.site-footer { margin-top: 80px; }
+
+.site-footer .inner {
+  border-top: 1px solid var(--hairline);
+  padding: 26px 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  font-family: var(--font-label);
+  font-size: 12px;
+  line-height: 22px;
+  color: var(--ink-muted);
+}
+
+.site-footer .links { display: flex; flex-wrap: wrap; gap: 24px; }
+.site-footer a:hover { color: var(--ink); }
+
+/* --- Phone ------------------------------------------------- */
+
+@media (max-width: 760px) {
+  :root { --gutter: 20px; }
+
+  body { font-size: 18px; line-height: 30px; }
+
+  .lede { font-size: 32px; line-height: 42px; padding-top: 56px; padding-bottom: 48px; }
+
+  .lead-entry .entry-title { font-size: 40px; line-height: 46px; }
+  .case-title { font-size: 42px; line-height: 48px; }
+  .record-title { font-size: 30px; line-height: 36px; }
+
+  .finding { font-size: 22px; line-height: 34px; }
+  .case-head .finding { font-size: 23px; line-height: 36px; }
+
+  .entry-row { gap: 0; padding: 28px 0; }
+  .entry-row .number { width: 100%; padding-top: 0; padding-bottom: 10px; }
+  .entry-row .entry-title { font-size: 22px; line-height: 29px; }   /* rule 5 pair, A */
+  .entry-row .finding { font-size: 24px; line-height: 35px; }       /* rule 5 pair, B */
+  .entry-row .names { font-size: 18px; line-height: 28px; }
+
+  .shorts { grid-template-columns: 1fr; gap: 24px; }
+
+  .split { gap: 32px; }
+  .split .aside { border-left: 0; border-top: 1px solid var(--hairline); padding-left: 0; padding-top: 24px; }
+
+  .record-row { gap: 12px; }
+  .record-row .what,
+  .record-row .source,
+  .record-row .shows { flex: 1 1 100%; }
+
+  .record-row--absent { padding-left: 18px; }
+
+  .next-title { font-size: 32px; line-height: 38px; }
+
+  .section-head { margin-top: 56px; }
+}

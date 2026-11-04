@@ -1,0 +1,5 @@
+# Netlify publishes the files at the top of this repository.
+# No build step: it is plain HTML and CSS.
+
+[build]
+  publish = "."

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entry 004 — The Archive</title>
+<meta name="description" content="A case file from The Archive: the film, the written entry, the Shorts, and every document the entry rests on.">
+<meta name="theme-color" content="#F3EEE5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Newsreader:wght@300;400;500&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="masthead">
+      <a class="wordmark" href="index.html">The Archive</a>
+      <span class="label tagline">The names first.</span>
+    </div>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Entries</a>
+      <a href="#the-record">The record</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- The head. Name and finding carry the page; no image above them.
+       The case title is the largest thing on this page (rule 4). -->
+  <section class="wrap case-head">
+    <span class="label">Entry 004</span>
+    <h1 class="case-title">[ENTRY TITLE]</h1>
+    <span class="bar"></span>
+    <p class="finding">[THE FINDING, IN ONE FLAT SENTENCE. NO ADJECTIVES. THIS IS THE LINE THAT TRAVELS.]</p>
+    <p class="names muted">[THE NAMES, SET OUT PLAINLY. ONE LINE EACH IF THAT SERVES THEM BETTER.]</p>
+  </section>
+
+  <!-- The film.
+       To embed: delete the <div class="film-placeholder"> block and paste
+       the YouTube iframe in its place. It will size itself. -->
+  <section class="wrap">
+    <div class="film">
+      <div class="film-placeholder">
+        <span class="label">The film</span>
+        <span class="sub">[YOUTUBE EMBED]</span>
+      </div>
+    </div>
+    <p class="caption film-note">[DISCLOSURE LINE FOR THIS FILM, AS YOU WORD IT.]</p>
+  </section>
+
+  <!-- The written entry -->
+  <section class="wrap">
+    <div class="section-head">
+      <span class="label">The written entry</span>
+    </div>
+    <div class="prose">
+      <p>[THE OPENING OF THE ESSAY. THE DOCUMENTED OBJECT THE ENTRY ENTERS THROUGH, AND WHAT IT SHOWS.]</p>
+      <p class="muted">[A SECOND PARAGRAPH. THEN THE READER GOES TO MEDIUM FOR THE REST.]</p>
+      <p><a class="action" href="[MEDIUM URL FOR THIS ENTRY]">Read the full entry on Medium &nbsp;&#8594;</a></p>
+    </div>
+  </section>
+
+  <!-- Shorts.
+       The wells stay empty until a real still sits in them. -->
+  <section class="wrap">
+    <div class="section-head">
+      <span class="label">Shorts</span>
+    </div>
+    <div class="shorts">
+      <a href="[SHORT URL]"><span class="well"></span><span class="short-title">[SHORT TITLE]</span></a>
+      <a href="[SHORT URL]"><span class="well"></span><span class="short-title">[SHORT TITLE]</span></a>
+      <a href="[SHORT URL]"><span class="well"></span><span class="short-title">[SHORT TITLE]</span></a>
+    </div>
+  </section>
+
+  <!-- THE RECORD.
+       Copy a .record-row to add a document.
+       For something that should exist and does not, add the
+       record-row--absent class and change HELD to NOT HELD. -->
+  <section class="wrap" id="the-record">
+    <div class="section-head">
+      <span class="label">The record</span>
+    </div>
+    <h2 class="record-title">Every document this rests on</h2>
+    <p class="record-sub">And every one that should exist and does not.</p>
+
+    <div class="record">
+
+      <div class="record-row">
+        <div class="what">
+          <span class="label">Held</span>
+          <div class="doc-name">[DOCUMENT NAME]</div>
+        </div>
+        <div class="source">[ISSUING AGENCY OR PUBLICATION]<br>[DATE]</div>
+        <div class="shows">[WHAT THIS DOCUMENT SHOWS, IN ONE LINE.]</div>
+      </div>
+
+      <div class="record-row">
+        <div class="what">
+          <span class="label">Held</span>
+          <div class="doc-name">[DOCUMENT NAME]</div>
+        </div>
+        <div class="source">[ISSUING AGENCY OR PUBLICATION]<br>[DATE]</div>
+        <div class="shows">[WHAT THIS DOCUMENT SHOWS, IN ONE LINE.]</div>
+      </div>
+
+      <div class="record-row record-row--absent">
+        <div class="what">
+          <span class="label label--accent">Not held</span>
+          <div class="doc-name">[WHAT SHOULD EXIST AND DOES NOT]</div>
+        </div>
+        <div class="source">[AGENCY ASKED]<br>[DATE OF RESPONSE]</div>
+        <div class="shows">[WHAT THE AGENCY SAID, QUOTED OR PARAPHRASED, AND WHERE IT WENT NEXT.]</div>
+      </div>
+
+    </div>
+
+    <p class="caption record-note">An absence is a finding. Rows marked NOT HELD record a document that should exist and does not, or a request that came back empty.</p>
+  </section>
+
+  <!-- Next entry. Every page ends with somewhere to go. -->
+  <section class="wrap">
+    <div class="section-head">
+      <span class="label">Next entry</span>
+    </div>
+    <a class="next" href="[NEXT ENTRY FILE]">
+      <span class="next-title">[ENTRY TITLE]</span>
+      <span class="bar"></span>
+      <span class="names">[THE NAMES, AS YOU SET THEM.]</span>
+      <span class="action">Entry 003 &nbsp;&#8594;</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="inner">
+      <span>The Archive with Leslie L. Stevens</span>
+      <span class="links">
+        <a href="[YOUTUBE URL]">YouTube</a>
+        <a href="[MEDIUM URL]">Medium</a>
+        <a href="mailto:hello@leslielstevens.net">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
